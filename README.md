@@ -18,7 +18,7 @@ docker-compose up (Este comando fará a construção das imagens Mongodb, Python
 
 docker run --name pythonapp  -it  test-python-app bash
 
-Abra um terminal e insira o comando abaixo: 
+Abra um terminal e insira o comando abaixo: <br>
 docker exec -it <mongo container> bash
 
 Abra outro terminal e insira o comando abaixo:
@@ -27,10 +27,10 @@ docker run -it --name pythonapp test-python-app
 Em um outro terminal, digite os comandos abaixo:
 mongosh
 show dbs
-![alt text](imagens/show_dbs.png)
-use <banco de dados>
-db.<collection>.find()
-![alt text](imagens/collection_find.png)
+![alt text](imagens/show_dbs.png)  <br>
+use <banco de dados>  <br>
+db.<collection>.find()  <br>
+![alt text](imagens/collection_find.png)  <br>
 
 
 
