@@ -11,9 +11,9 @@ Neste repositório, estou desenvolvendo um processo de análise de carteiras, ut
 * Python (ETL para o MySQL): Pendente
 
 ## Processo de carga no Mongodb:
-O processo de carga dos documentos dentro das collctions é feito conforme a seguir:
+O processo de carga dos documentos dentro das collections é feito conforme a seguir:
 
-abra a pasta 
+***Após clonar o repositório:***
 docker-compose up (Este comando fará a construção das imagens Mongodb, Python e MySQL)
 
 docker run --name pythonapp  -it  test-python-app bash
