@@ -1,5 +1,13 @@
 # Analise_de_carteira
-Neste repositório, estou desenvolvendo um processo de análise de carteiras, utilizado Docker, Mongodb, SQL e Python. 
+Neste repositório, estou desenvolvendo um processo de análise de carteiras. A ideia é tratar arquivos json, contendo carteiras de investimento, usuarios e perfis de investimento. Esses arquivos são armazenados em banco NOSQL, e posteriormente tratados para que seja feita a análise da evolução dessas carteiras de investimento. 
+Para acompanhar a evolução dos preços das ações, será feita extração diária, e o armazenamento será feito em banco de dados relacional. 
+A plotagem dos dados será feita pelo uso da biblioteca Plotly.
+
+# Tecnologias usadas:
+* Mongodb
+* Docker
+* SQL
+* Python
 
 ## Status do projeto:
 * Docker Python: Feito
@@ -9,6 +17,7 @@ Neste repositório, estou desenvolvendo um processo de análise de carteiras, ut
 * Pymongo (ETL para o Mongo): Feito
 * Docker MySQL: Pendente
 * Python (ETL para o MySQL): Pendente
+* Plotly
 
 ## Processo de carga no Mongodb:
 O processo de carga dos documentos dentro das collections é feito conforme a seguir:
