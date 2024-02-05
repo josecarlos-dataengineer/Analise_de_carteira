@@ -12,15 +12,15 @@ A plotagem dos dados será feita pelo uso da biblioteca Plotly.
 ## Status do projeto:
  Etapa | Status
  --------------
-Docker Python | Feito
-Docker Mongo | Feito
-Docker Compose | Feito
-Python (criação dos documentos) | Feito
-Pymongo (ETL arquivos json para o Mongo) | Feito
-Docker MySQL | Feito
-Python (ETL cotações do dia para o MySQL) | Feito
-Python (Análise dos arquivos) | pendente
-Plotly | pendente
+ Docker Python | Feito
+ Docker Mongo | Feito
+ Docker Compose | Feito
+ Python (criação dos documentos) | Feito
+ Pymongo (ETL arquivos json para o Mongo) | Feito
+ Docker MySQL | Feito
+ Python (ETL cotações do dia para o MySQL) | Feito
+ Python (Análise dos arquivos) | pendente
+ Plotly | pendente
 
 ## Processo de carga no Mongodb:
 O processo de carga dos documentos dentro das collections é feito conforme a seguir:
