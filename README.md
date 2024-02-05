@@ -11,7 +11,7 @@ A plotagem dos dados será feita pelo uso da biblioteca Plotly.
 
 ## Status do projeto:
 | Etapa | Status |
- --------------
+| ------| ------ |
 | Docker Python | Feito |
 | Docker Mongo | Feito |
 | Docker Compose | Feito |
