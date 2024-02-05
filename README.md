@@ -19,8 +19,9 @@ A plotagem dos dados será feita pelo uso da biblioteca Plotly.
 | Pymongo (ETL arquivos json para o Mongo) | Feito |
 | Docker MySQL | Feito |
 | Python (ETL cotações do dia para o MySQL) | Feito |
-| Python (Análise dos arquivos) | pendente |
-| Plotly | pendente |
+| Python (Análise dos arquivos) | Em andamento |
+| Matplotlib | feito |
+| Plotly Dash | pendente |
 
 ## Processo de carga no Mongodb:
 O processo de carga dos documentos dentro das collections é feito conforme a seguir:
@@ -54,9 +55,28 @@ No mesmo terminal aberto na etapa 1, insira o comando:
 ## Análise: (***Em andamento***)
 A análise consiste em verificar o avanço dos ganhos ou perdas de cada carteira armazenada no mongodb, bem como entender a concentração setorial e outros indicadores.
 
-A primeira análise feita foi de variação entre valor comprado e valor atualizado, mensurando qual foi a perda ou ganho de cada ticker.
+A primeira análise feita foi de variação entre valor comprado e valor atualizado, mensurando qual foi a perda ou ganho de cada ticker. <br>
 
 ![alt text](imagens/tickers_compra_x_atual.png)
+
+Para fazer essa análise, foram feitas duas consultas: 
+No Mongodb, foi consultada a coleção operacoes, que contém as compras, suas quantidades e valores. O arquivo utilizado é o python\analytics.py.
+
+Exemplo de documento: <br>
+
+![alt text](imagens/documento_mongo.png)
+
+No Mysql foi feita a consulta  do valor da cotação d-1 de todos os tickers. 
+
+Chamada das funções: <br>
+**Mongo:**  <br>
+![alt text](imagens/chamada_mongo_analise.png)
+
+**MySql:**  <br>
+![alt text](imagens/chamada_mysql_analise.png)
+
+As chamadas das funções utilizam o arquivo python\environment.py como fonte, nesse arquivo constam as classes que auxiliam na criação das conexões, pastas e consultas.
+
 
 
 
