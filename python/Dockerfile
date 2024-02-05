@@ -8,9 +8,10 @@ RUN apt install nano
 
 COPY /data_generator.py /workspaces/app/data_generator.py 
 COPY /requirements.txt /workspaces/app/requirements.txt
-COPY /enviroment.py /workspaces/app/enviroment.py
-COPY /fundamentus.py /workspaces/app/fundamentus.py
+COPY /environment.py /workspaces/app/environment.py
+COPY /fundamentus_etl.py /workspaces/app/fundamentus_etl.py
 COPY /mongo_etl.py /workspaces/app/mongo_etl.py
+COPY /analytics.py /workspaces/app/analytics.py
 
 WORKDIR /workspaces/app
 RUN pip install -r requirements.txt

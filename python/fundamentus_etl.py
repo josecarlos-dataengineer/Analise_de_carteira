@@ -8,6 +8,7 @@ from environment import api_get,mysql_etl
 # Chamada das funções
 if __name__ == "__main__":
     # Cria dataframe com dados atuais de cada função, coletando do site fundamentus
+    print('Extraindo dados de https://www.fundamentus.com.br/resultado.php')
     df = api_get(
         url='https://www.fundamentus.com.br/resultado.php',
         headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'}).fundamentus_df()

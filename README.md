@@ -3,6 +3,9 @@ Neste repositório, estou desenvolvendo um processo de análise de carteiras. A 
 Para acompanhar a evolução dos preços das ações, será feita extração diária, e o armazenamento será feito em banco de dados relacional. 
 A plotagem dos dados será feita pelo uso da biblioteca Plotly.
 
+# Arquitetura
+A arquitetura aqui usada visa apenas organizar o conhecimento do funcionamento dos conteineres com o docker-compose. Por esse motivo não há a utilização de recursos de Cloud. <br>
+![alt text](imagens/arquitetura.png)
 # Tecnologias usadas:
 * Mongodb
 * Docker
