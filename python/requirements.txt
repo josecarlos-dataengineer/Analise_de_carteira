@@ -7,3 +7,4 @@ sqlalchemy==1.4.25
 pymongo
 pyarrow
 beautifulsoup4
+matplotlib
