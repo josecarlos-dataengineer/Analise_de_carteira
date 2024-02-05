@@ -11,21 +11,34 @@ services:
       # ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
     ports:
       - 27017:27017
-    extra_hosts:
-      - "host.docker.internal:host-gateway"    
-    command: ["--bind_ip_all", "--port", "27017"]
+
+  mysql:
+    hostname: mysql
+    build: ./MySQL
+    restart: always
+    # networks:
+    #   - case_de
+    environment:
+      MYSQL_DATABASE: 'db'
+      # MYSQL_ROOT_USER: 'rootuser'
+      MYSQL_ROOT_PASSWORD: 'root'
+      # MYSQL_USER: 'case'
+      # MYSQL_PASSWORD: 'case123'
+    ports:
+      - "3306:3306"
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"    
+    # command: ["--bind_ip_all", "--port", "27017"]
 
   python-app:
     container_name: python-app
     build:
       context: ./python
       dockerfile: ./Dockerfile
-    command: sh -c "sleep 5s"
+    command: sh -c "sleep 15s"
     depends_on:
       - mongo
+      - mysql
     ports:
       - 8888:8888
-    # environment:
-      # ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      # ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      # ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+
