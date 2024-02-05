@@ -145,11 +145,30 @@ class usuario():
 
 
 # chamada das funções
-usuario(nome='Icaro Onofre',perfis=['moderado','conservador'],carteiras=['governo']).criar_json()
+usuario(nome='Jose Carlos',perfis=['conservador'],carteiras=['fake']).criar_json()
 
-operacao(id_usuario='21924e5c',id_carteira='43b82e2b',ticker='elet3',qtde=55,preco=40.81,operacao='compra').criar_json()  
+operacao(id_usuario='5f95f145',id_carteira='43b82e2b',ticker='ABEV3',qtde=15,preco=14.96,operacao='compra').criar_json()  
+operacao(id_usuario='5f95f145',id_carteira='43b82e2b',ticker='BBDC4',qtde=64,preco=26.18,operacao='compra').criar_json()  
+operacao(id_usuario='5f95f145',id_carteira='43b82e2b',ticker='CVCB3',qtde=28,preco=15.65,operacao='compra').criar_json()  
+operacao(id_usuario='5f95f145',id_carteira='43b82e2b',ticker='FLRY3',qtde=52,preco=24.23,operacao='compra').criar_json()  
+operacao(id_usuario='5f95f145',id_carteira='43b82e2b',ticker='GRND3',qtde=55,preco=7.18,operacao='compra').criar_json()  
+operacao(id_usuario='5f95f145',id_carteira='43b82e2b',ticker='KLBN11',qtde=50,preco=23.64,operacao='compra').criar_json()  
+operacao(id_usuario='5f95f145',id_carteira='43b82e2b',ticker='WEGE3',qtde=25,preco=35.82,operacao='compra').criar_json()  
 
-carteiras(nome='papel',perfil=['conservador'],tags=['privadas'],ticker={'klbn4':{500:4.27}}).criar_json()
+carteiras(
+    nome='fake',
+    perfil=['conservador'],
+    tags=['fake'],
+    ticker={
+    'ABEV3':{15:14.96},
+    'BBDC4':{64:26.18},
+    'CVCB3':{28:15.65},
+    'FLRY3':{52:24.23},
+    'GRND3':{55:7.18},
+    'KLBN11':{50:23.64},
+    'WEGE3':{25:35.82}
+
+    }).criar_json()
     
 
 

@@ -15,6 +15,8 @@ from sqlalchemy import create_engine
 import os
 from urllib.request import Request, urlopen
 
+
+
 logging.basicConfig(
     
         level=logging.INFO,
@@ -53,6 +55,7 @@ class api_get():
         colunas = {i: col.getText() for i, col in enumerate(soup.find('table', {'id': 'resultado'}).find('thead').findAll('th'))}
 
         dados = pd.DataFrame(columns=colunas_names)
+        dados['data_carga'] = dt.date.today()
         
         for i in range(len(soup.find('table', {'id': 'resultado'}).find('tbody').findAll('tr'))):
             linha = soup.find('table', {'id': 'resultado'}).find('tbody').findAll('tr')[i].getText().split('\n')[1:]
@@ -60,6 +63,15 @@ class api_get():
             dados = pd.concat([dados, inserir_linha], ignore_index=True)
             
         return dados
+    
+    def data_cleaning(col:pd.Series()):  
+        '''
+        Função criada para tratar os numeros armazenados com texto em formato pt-br
+        remove os sinais de %
+        ajusta os sinais decimais
+        '''  
+        col = col.apply(lambda x: float(str(x).replace('.','').replace(',','.').replace('%','')))
+        return col   
 
 
 class env_builder():

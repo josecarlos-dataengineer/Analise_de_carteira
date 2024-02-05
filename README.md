@@ -54,6 +54,10 @@ No mesmo terminal aberto na etapa 1, insira o comando:
 ## Análise: (***Em andamento***)
 A análise consiste em verificar o avanço dos ganhos ou perdas de cada carteira armazenada no mongodb, bem como entender a concentração setorial e outros indicadores.
 
+A primeira análise feita foi de variação entre valor comprado e valor atualizado, mensurando qual foi a perda ou ganho de cada ticker.
+
+![alt text](imagens/tickers_compra_x_atual.png)
+
 
 
 

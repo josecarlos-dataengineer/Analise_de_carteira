@@ -1,6 +1,6 @@
 # import sys 
 # sys.path.append(r'C:\Users\SALA443\Desktop\Projetos\DataEngineering_Kubernetes\test_folder\Lib\site-packages')
-from enviroment import *
+from environment import *
 
 filesl = ['usuarios.json','carteiras.json','operacoes.json'] 
 # path = r'C:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\testes\python\\'
