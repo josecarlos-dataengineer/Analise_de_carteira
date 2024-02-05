@@ -14,10 +14,11 @@ A plotagem dos dados será feita pelo uso da biblioteca Plotly.
 * Docker Mongo: Feito
 * Docker Compose: Feito
 * Python (criação dos documentos): Feito
-* Pymongo (ETL para o Mongo): Feito
-* Docker MySQL: Pendente
-* Python (ETL para o MySQL): Pendente
-* Plotly
+* Pymongo (ETL arquivos json para o Mongo): Feito
+* Docker MySQL: Feito
+* Python (ETL cotações do dia para o MySQL): Feito
+* Python (Análise dos arquivos)
+* Plotly pendente
 
 ## Processo de carga no Mongodb:
 O processo de carga dos documentos dentro das collections é feito conforme a seguir:
@@ -25,22 +26,34 @@ O processo de carga dos documentos dentro das collections é feito conforme a se
 ***Após clonar o repositório:***
 docker-compose up (Este comando fará a construção das imagens Mongodb, Python e MySQL)
 
-docker run --name pythonapp  -it  test-python-app bash
+* 1 - docker run --name pythonapp  -it  <imagem_python:tag> bash
+* 2 - python data_generator.py (***Este arquivo criará os documentos de exemplo***)
+* 3 - python mongo_etl.py (***este comando inicia a carga dos arquivos json para o mongo***)
 
-***Abra um terminal e insira o comando abaixo:*** <br>
-* docker exec -it <mongo container> bash
-
-***Abra outro terminal e insira o comando abaixo:***
-* docker run -it --name pythonapp test-python-app
-
-***Em um outro terminal, digite os comandos abaixo:***
-* mongosh
-* show dbs
+***Para checar os arquivos:*** <br>
+***Abra um terminal e insira o comando abaixo:*** <br> 
+* 4 - docker exec -it <mongo_container> bash
+* 5 - mongosh (***Esse comando inicia o mongo cli***)
+* 6 - show dbs (***Mostra todos os databases, e você poderá ver o database plataforma***)
 ![alt text](imagens/show_dbs.png)  <br>
 
-* use <banco de dados>  <br>
-* db.<collection>.find()  <br>
+* 7 - use <banco de dados>  <br>
+* 8 - db.<collection>.find()  <br>
 ![alt text](imagens/collection_find.png)  <br>
+
+## Processo de carga no MySQL:
+No mesmo terminal aberto na etapa 1, insira o comando:
+* python fundamentus_etl.py (***Esse comando fará a extração da tabela contendo os valores das ações do dia anterior e outros dados fundamentilistas ***)
+### Checar carga no MySQL.
+* docker exec -it <container_mysql> bash
+* mysql -u root -p (após digitar esse comando será solicitada a senha:)
+* senha = root (***Pode ser alterada no arquivo compose.yaml***)
+
+
+
+
+
+
 
 
 
