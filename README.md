@@ -49,7 +49,8 @@ No mesmo terminal aberto na etapa 1, insira o comando:
 * mysql -u root -p (após digitar esse comando será solicitada a senha:)
 * senha = root (***Pode ser alterada no arquivo compose.yaml***)
 
-
+## Análise: (***Em andamento***)
+A análise consiste em verificar o avanço dos ganhos ou perdas de cada carteira armazenada no mongodb, bem como entender a concentração setorial e outros indicadores.
 
 
 
