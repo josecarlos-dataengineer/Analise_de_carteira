@@ -20,11 +20,4 @@ ENV PYTHONPATH=/usr/local/lib/python3.9/dist-packages
 ENV ME_CONFIG_MONGODB_URL=mongodb://root:example@mongo:27017/
 ENV ME_CONFIG_MONGODB_ADMINUSERNAME=root
 ENV ME_CONFIG_MONGODB_ADMINPASSWORD=example
-CMD ["python" , "data_generator.py","sleep 20s","python fundamentus.py","sleep 20s","python mongo_etl.py"]
-
-# EXPOSE 8888
-# ENV PYTHONPATH=/usr/local/bin/python
-
-# CMD ["python"]
-
-# first test for CI
+# CMD ["python","data_generator.py","sleep 20s","python fundamentus.py","sleep 20s","python mongo_etl.py"]
