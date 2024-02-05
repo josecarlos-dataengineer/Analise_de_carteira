@@ -7,13 +7,6 @@ from datetime import date
 import pandas as pd
 import uuid
 import os
-import pymongo
-
-# myclient = pymongo.MongoClient("mongodb://mongo:27017/")
-# myclient = pymongo.MongoClient("mongodb://user:example@host.docker.internal:27017/?authSource=the_database&authMechanism=SCRAM-SHA-1")
-
-myclient = pymongo.MongoClient("mongodb://host.docker.internal:27017/")
-
 
 # definindo os documentos de aporte e vendas
 class operacao():
@@ -151,70 +144,14 @@ class usuario():
             json.dump(data, arquivo,indent=4)
 
 
-
-def carrega_carteiras():
-    
-    with open(f"carteiras.json", 'r+',encoding='UTF-8') as arquivo:
-        data = json.load(arquivo)   
-
-    # myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-    mydb = myclient["plataforma"]
-    col = mydb['carteiras']
-    # collist = mydb.list_collection_names()
-    # print(collist)
-    # db = pymongo.MongoClient("mongodb://localhost:27017/vendas").bulk_example
-    mydb.carteiras.insert_many(data)
-    print("carteiras foi inserida no bannco")
-    
-def carrega_usuarios():
-    
-    with open(f"usuarios.json", 'r+',encoding='UTF-8') as arquivo:
-        data = json.load(arquivo)   
-
-    # myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-    mydb = myclient["plataforma"]
-    col = mydb['usuarios']
-    # collist = mydb.list_collection_names()
-    # print(collist)
-    # db = pymongo.MongoClient("mongodb://localhost:27017/vendas").bulk_example
-    mydb.usuarios.insert_many(data)
-    print("usuarios foi inserida no bannco")
-    
-
-def carrega_operacoes():
-    
-    with open(f"operacoes.json", 'r+',encoding='UTF-8') as arquivo:
-        data = json.load(arquivo)
-
-    # myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-    mydb = myclient["plataforma"]
-    col = mydb['operacoes']
-    # collist = mydb.list_collection_names()
-    # print(collist)
-    # db = pymongo.MongoClient("mongodb://localhost:27017/vendas").bulk_example
-    mydb.operacoes.insert_many(data)
-    print("operacoes foi inserida no bannco")
-
+# chamada das funções
 usuario(nome='Icaro Onofre',perfis=['moderado','conservador'],carteiras=['governo']).criar_json()
 
 operacao(id_usuario='21924e5c',id_carteira='43b82e2b',ticker='elet3',qtde=55,preco=40.81,operacao='compra').criar_json()  
 
 carteiras(nome='papel',perfil=['conservador'],tags=['privadas'],ticker={'klbn4':{500:4.27}}).criar_json()
     
-carrega_operacoes()
 
-
-carrega_usuarios()
-
-carrega_carteiras()
-
-# mydb = myclient["plataforma"]
-# col = mydb['operacoes']
-
-# xx = col.find()
-# for x in xx:
-#     print(x)
-        
 
 
 

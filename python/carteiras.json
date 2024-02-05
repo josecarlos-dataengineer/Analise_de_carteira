@@ -1,0 +1,17 @@
+[
+    {
+        "id": "cadeae53",
+        "nome": "papel",
+        "perfil": [
+            "conservador"
+        ],
+        "tags": [
+            "privadas"
+        ],
+        "tickers": {
+            "klbn4": {
+                "500": 4.27
+            }
+        }
+    }
+]
