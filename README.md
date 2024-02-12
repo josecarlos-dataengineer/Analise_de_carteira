@@ -81,15 +81,6 @@ Exemplo de documento: <br>
 
 No Mysql foi feita a consulta  do valor da cotação d-1 de todos os tickers. 
 
-Chamada das funções: <br>
-**Mongo:**  <br>
-![alt text](imagens/chamada_mongo_analise.png)
-
-**MySql:**  <br>
-![alt text](imagens/chamada_mysql_analise.png)
-
-As chamadas das funções utilizam o arquivo python\environment.py como fonte, nesse arquivo constam as classes que auxiliam na criação das conexões, pastas e consultas.
-
 Para checar o gráfico, é possível executar o arquivo python\analytics.py localmente.
 
 
