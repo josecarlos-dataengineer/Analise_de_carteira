@@ -86,6 +86,7 @@ Para checar o gráfico, é possível executar o arquivo python\analytics.py loca
 Próximos passos:
 
 Revisitarei em breve esse projeto, pois tenho em mente que ficará melhor dividindo os módulos python em mais de um Container, e considero interessante utilizar o Streamlit para criar interação com o usuário.
+No repositório ['streamlit_analise_de_carteira'](https://github.com/josecarlos-dataengineer/streamlit_analise_de_carteira/blob/main/README.md) iniciei a criação de uma interface Streamlit para a inserção dos dados pelo usuário.
 
 
 
