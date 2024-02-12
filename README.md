@@ -66,7 +66,7 @@ Abra mais um terminal e execute o comando:
 * use db ***Selecionará o banco de dados db***
 * select * from fundamentus;
 
-## Análise: (***Em andamento***)
+## Análise:
 A análise consiste em verificar o avanço dos ganhos ou perdas de cada carteira armazenada no mongodb, bem como entender a concentração setorial e outros indicadores.
 
 A primeira análise feita foi de variação entre valor comprado e valor atualizado, mensurando qual foi a perda ou ganho de cada ticker. <br>
@@ -82,6 +82,10 @@ Exemplo de documento: <br>
 No Mysql foi feita a consulta  do valor da cotação d-1 de todos os tickers. 
 
 Para checar o gráfico, é possível executar o arquivo python\analytics.py localmente.
+
+Próximos passos:
+
+Revisitarei em breve esse projeto, pois tenho em mente que ficará melhor dividindo os módulos python em mais de um Container, e considero interessante utilizar o Streamlit para criar interação com o usuário.
 
 
 
