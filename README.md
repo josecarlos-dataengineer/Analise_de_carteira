@@ -1,7 +1,6 @@
 # Analise_de_carteira
 Neste repositório, estou desenvolvendo um processo de análise de carteiras. A ideia é tratar arquivos json, contendo carteiras de investimento, usuarios e perfis de investimento. Esses arquivos são armazenados em banco NOSQL, e posteriormente tratados para que seja feita a análise da evolução dessas carteiras de investimento. 
 Para acompanhar a evolução dos preços das ações, será feita extração diária, e o armazenamento será feito em banco de dados relacional. 
-A plotagem dos dados será feita pelo uso da biblioteca Plotly.
 
 # Arquitetura
 A arquitetura aqui usada visa apenas organizar o conhecimento do funcionamento dos conteineres com o docker-compose. Por esse motivo não há a utilização de recursos de Cloud. <br>
@@ -9,51 +8,62 @@ A arquitetura aqui usada visa apenas organizar o conhecimento do funcionamento d
 # Tecnologias usadas:
 * Mongodb
 * Docker
-* SQL
+* MySQL
 * Python
+
+# Breve descrição do projeto: 
+### Docker Python: <br>
+Container que contém o script que cria os arquivos de usuários, carteiras e operações, bem como o ETL para os bancos MongoDB e MySQL. Dentro desse container existem os arquivos:
+* 1 - environment.py: Módulo que contém todas as classes utilizadas nos módulos listados a seguir, esse módulo cria conexões, estrutura de pastas, logging, conexões e scripts de ETL.
+* 2 - data_generator.py: cria os arquivos de usuários, carteiras e operações em formato .json.
+* 3 - fundamentus_etl.py: Módulo que extrai os dados das ações d-1, carrega em um dataframe Pandas e escreve os dados no banco de dados MySQL.
+* 4 - mongo_etl.py: Módulo que carrega no MongoDB, os arquivos .json gerados pelo módulo data_generator.
+* 5 - analytics.py: Módulo que contém o script para criar o gráfico no matplotlib.
+### Docker Mongo: <br>
+Container criado para hospedar o banco de dados MongoDB. Este banco será utilizado para armazenar os dados que tem características que aderem a um modelo não relacional. Por exemplo, operações de compra e venda, que podem ter preços diferentes para a compra de uma mesma ação, ou usuários que podem ter mais de uma carteira. Para a criação desse container, é utilizada a imagem mongo:latest.
+### Docker MySQL: <br>
+Container utilizado para hospedar um banco de dados relacional MySQL. Neste banco de dados é armazenada a tabela com os dados das ações listadas na B3. Dados D-1 como Cotação, P/L, Crescimento nos últimos 5 anos e outros dados.
+### Docker-Compose: <br>
+Arquivo usado para declaração do conjunto de contêineres dentro de uma rede. A utilização desse arquivo yaml facilita a criação dos contêineres e configuração de disponibilidade de portas.
 
 ## Status do projeto:
 | Etapa | Status |
 | ------| ------ |
 | Docker Python | Feito |
 | Docker Mongo | Feito |
+| Docker MySQL | Feito |
 | Docker Compose | Feito |
 | Python (criação dos documentos) | Feito |
 | Pymongo (ETL arquivos json para o Mongo) | Feito |
-| Docker MySQL | Feito |
 | Python (ETL cotações do dia para o MySQL) | Feito |
-| Python (Análise dos arquivos) | Em andamento |
-| Matplotlib | feito |
-| Plotly Dash | pendente |
+| Exibição de gráfico preço compra x preço atual | feito |
 
 ## Processo de carga no Mongodb:
 O processo de carga dos documentos dentro das collections é feito conforme a seguir:
 
 ***Após clonar o repositório:***
-docker-compose up (Este comando fará a construção das imagens Mongodb, Python e MySQL)
+* 1 - docker-compose up (Este comando fará a construção das imagens Mongodb, Python e MySQL. Após alguns minutos acompanhando o log no terminal, será apresentada a mensagem "ready for connections" para o container mysql.)
 
-* 1 - docker run --name pythonapp  -it  <imagem_python:tag> bash
-* 2 - python data_generator.py (***Este arquivo criará os documentos de exemplo***)
-* 3 - python mongo_etl.py (***este comando inicia a carga dos arquivos json para o mongo***)
+docker exec 2bb8fa481def0bd90e8cc465d09f464ee236bd97e311381f36cfdbeb3d3f2ae4 python3 fundamentus_etl.py
 
-***Para checar os arquivos:*** <br>
-***Abra um terminal e insira o comando abaixo:*** <br> 
-* 4 - docker exec -it <mongo_container> bash
-* 5 - mongosh (***Esse comando inicia o mongo cli***)
-* 6 - show dbs (***Mostra todos os databases, e você poderá ver o database plataforma***)
-![alt text](imagens/show_dbs.png)  <br>
-
-* 7 - use <banco de dados>  <br>
-* 8 - db.<collection>.find()  <br>
-![alt text](imagens/collection_find.png)  <br>
-
-## Processo de carga no MySQL:
-No mesmo terminal aberto na etapa 1, insira o comando:
-* python fundamentus_etl.py (***Esse comando fará a extração da tabela contendo os valores das ações do dia anterior e outros dados fundamentilistas ***)
-### Checar carga no MySQL.
-* docker exec -it <container_mysql> bash
-* mysql -u root -p (após digitar esse comando será solicitada a senha:)
-* senha = root (***Pode ser alterada no arquivo compose.yaml***)
+* docker run -it analise_de_carteira-python-app:latest bash <br> (Este comando executará o container python, e deixará este container em execução.)
+### Execução dos módulos.
+* docker exec <id do container python> data_generator.py
+* docker exec <id do container python> mongo_etl.py
+* docker exec <id do container python> fundamentus_etl.py
+### Checando o conteúdo dos bancos de dados após as execuções:
+Abra mais um terminal e execute o comando:
+* docker exec -it <id do container MongoDB> bash
+* mongosh
+* use plataforma
+* db.<nome da collection>.find() ***Exemplo: db.usuarios.find***
+Essa sequência de comandos guia a consulta de uma collection no Mongodb.
+Abra mais um terminal e execute o comando:
+* docker exec -it <id do container MongoDB> bash
+* mysql -u root -p ***neste projeto o user é root, mas vc pode alterar no arquivo compose.yaml***.
+* insira o password ***"root" neste projeto, mas vc pode alterar no arquivo compose.yaml***.
+* use db ***Selecionará o banco de dados db***
+* select * from fundamentus;
 
 ## Análise: (***Em andamento***)
 A análise consiste em verificar o avanço dos ganhos ou perdas de cada carteira armazenada no mongodb, bem como entender a concentração setorial e outros indicadores.
@@ -80,10 +90,8 @@ Chamada das funções: <br>
 
 As chamadas das funções utilizam o arquivo python\environment.py como fonte, nesse arquivo constam as classes que auxiliam na criação das conexões, pastas e consultas.
 
-
-
-
-
+cd testes/python \
+streamlit run home.py --server.port=8501 --server.address=0.0.0.0
 
 
 

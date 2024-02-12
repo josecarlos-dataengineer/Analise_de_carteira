@@ -13,3 +13,12 @@ host=localhost
 user=root
 password=****
 database=db -  criar - environment.py - 2024-02-05 19:40:02,894
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-10 14:36:03,223
+Client conectado! URI:mongodb://localhost:27017/ -  client_mongo - environment.py - 2024-02-10 14:36:03,286
+14 documentos da coleção operacoes foram carregados para a lista. -  mongo_to_dict_list - environment.py - 2024-02-10 14:36:03,300
+conexão criada para
+host=localhost
+user=root
+password=****
+database=db -  criar - environment.py - 2024-02-10 14:36:03,378
