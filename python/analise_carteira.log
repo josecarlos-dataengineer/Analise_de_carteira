@@ -22,3 +22,67 @@ host=localhost
 user=root
 password=****
 database=db -  criar - environment.py - 2024-02-10 14:36:03,378
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 16:49:21,921
+Client conectado! URI:mongodb://localhost:27017/ -  client_mongo - environment.py - 2024-02-12 16:49:22,063
+7 documentos da coleção operacoes foram carregados para a lista. -  mongo_to_dict_list - environment.py - 2024-02-12 16:49:22,079
+conexão criada para
+host=localhost
+user=root
+password=****
+database=db -  criar - environment.py - 2024-02-12 16:49:22,167
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 16:52:15,999
+Client conectado! URI:mongodb://localhost:27017/ -  client_mongo - environment.py - 2024-02-12 16:52:16,016
+7 documentos da coleção operacoes foram carregados para a lista. -  mongo_to_dict_list - environment.py - 2024-02-12 16:52:16,030
+conexão criada para
+host=localhost
+user=root
+password=****
+database=db -  criar - environment.py - 2024-02-12 16:52:16,082
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 16:54:03,577
+Client conectado! URI:mongodb://localhost:27017/ -  client_mongo - environment.py - 2024-02-12 16:54:03,585
+7 documentos da coleção operacoes foram carregados para a lista. -  mongo_to_dict_list - environment.py - 2024-02-12 16:54:03,623
+conexão criada para
+host=localhost
+user=root
+password=****
+database=db -  criar - environment.py - 2024-02-12 16:54:03,661
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 16:54:03,662
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 16:54:17,978
+Client conectado! URI:mongodb://localhost:27017/ -  client_mongo - environment.py - 2024-02-12 16:54:17,985
+7 documentos da coleção operacoes foram carregados para a lista. -  mongo_to_dict_list - environment.py - 2024-02-12 16:54:18,009
+conexão criada para
+host=localhost
+user=root
+password=****
+database=db -  criar - environment.py - 2024-02-12 16:54:18,024
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 16:54:18,025
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 16:55:26,474
+Client conectado! URI:mongodb://localhost:27017/ -  client_mongo - environment.py - 2024-02-12 16:55:26,483
+7 documentos da coleção operacoes foram carregados para a lista. -  mongo_to_dict_list - environment.py - 2024-02-12 16:55:26,504
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 16:55:26,506
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 16:56:24,790
+Client conectado! URI:mongodb://localhost:27017/ -  client_mongo - environment.py - 2024-02-12 16:56:24,796
+7 documentos da coleção operacoes foram carregados para a lista. -  mongo_to_dict_list - environment.py - 2024-02-12 16:56:24,826
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 16:56:24,828
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 17:00:24,949
+Client conectado! URI:mongodb://localhost:27017/ -  client_mongo - environment.py - 2024-02-12 17:00:24,956
+7 documentos da coleção operacoes foram carregados para a lista. -  mongo_to_dict_list - environment.py - 2024-02-12 17:00:24,968
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 17:00:24,971
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 17:04:20,194
+Client conectado! URI:mongodb://localhost:27017/ -  client_mongo - environment.py - 2024-02-12 17:04:20,202
+7 documentos da coleção operacoes foram carregados para a lista. -  mongo_to_dict_list - environment.py - 2024-02-12 17:04:20,225
+Ambiente:Local 
+ path:c:\Users\SALA443\Desktop\Projetos\josecarlos-dataengineer\Analise_de_carteira\python -  uri_scan - environment.py - 2024-02-12 17:04:20,229

@@ -53,6 +53,7 @@ docker exec 2bb8fa481def0bd90e8cc465d09f464ee236bd97e311381f36cfdbeb3d3f2ae4 pyt
 * docker exec <id do container python> fundamentus_etl.py
 ### Checando o conteúdo dos bancos de dados após as execuções:
 Abra mais um terminal e execute o comando:
+docker exec -it 72b152891f3eedfa8b9b695e3d8fed20581e180d9e8a1f4990728e5a5fba716f bash
 * docker exec -it <id do container MongoDB> bash
 * mongosh
 * use plataforma
@@ -69,7 +70,6 @@ Abra mais um terminal e execute o comando:
 A análise consiste em verificar o avanço dos ganhos ou perdas de cada carteira armazenada no mongodb, bem como entender a concentração setorial e outros indicadores.
 
 A primeira análise feita foi de variação entre valor comprado e valor atualizado, mensurando qual foi a perda ou ganho de cada ticker. <br>
-
 ![alt text](imagens/tickers_compra_x_atual.png)
 
 Para fazer essa análise, foram feitas duas consultas: 
@@ -90,8 +90,7 @@ Chamada das funções: <br>
 
 As chamadas das funções utilizam o arquivo python\environment.py como fonte, nesse arquivo constam as classes que auxiliam na criação das conexões, pastas e consultas.
 
-cd testes/python \
-streamlit run home.py --server.port=8501 --server.address=0.0.0.0
+Para checar o gráfico, é possível executar o arquivo python\analytics.py localmente.
 
 
 

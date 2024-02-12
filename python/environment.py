@@ -14,6 +14,7 @@ import pymysql
 from sqlalchemy import create_engine
 import os
 from urllib.request import Request, urlopen
+import mysql.connector
 
 
 
@@ -127,6 +128,25 @@ class env_builder():
             pass
         
         return myclient
+    def client_mysql():
+        host = {
+            'local':'localhost',
+            'container':'host.docker.internal'            
+            }
+        host_str = host[env_builder.uri_scan()]
+        
+        try:
+            mydb = mysql.connector.connect(
+            host = host_str,
+            user = 'root',
+            password = 'root',
+            database = 'db')
+
+        except Exception as e:
+
+            pass
+        
+        return mydb
 
 class mongo_etl():
     '''
